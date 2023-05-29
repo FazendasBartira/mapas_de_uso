@@ -67,9 +67,9 @@
         <img src="images/SanDiego.jpeg" alt="House" style="width:100%">
       </div>
     </div>
-  </div>
+    </div>
 
-  <div class="w3-row-padding">
+    <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding"><a href="qgis/Colorado/Colorado.html">Fazenda Colorado</div>
@@ -94,12 +94,12 @@
         <img src="images/San_jose_I.jpeg" alt="House" style="width:99%">
       </div>
     </div>
-  </div>
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
+    </div>
+    <div class="w3-row-padding">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding"><a href="qgis/Talisma/Talisma.html">Fazenda Talismã</div>
-        <img src="images/Talisma.jpeg" alt="House" style="width:99%">
+        <img src="images/Talisma.jpg" alt="House" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
@@ -108,10 +108,16 @@
         <img src="images/San_jose_II.jpeg" alt="House" style="width:99%">
       </div>
     </div>
-	<div class="w3-col l3 m6 w3-margin-bottom">
+	  <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding"><a href="qgis/Guarabu/Guarabu.html">Fazenda Guarabu</div>
         <img src="images/Guarabu.jpeg" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding"><a href="qgis/Sublime/Sublime.html">Fazenda Sublime</div>
+        <img src="images/sublime.jpeg" alt="House" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
@@ -147,36 +153,76 @@
 <footer class="w3-center w3-black w3-padding-16">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script>
-      // Função para inicializar o mapa
-      function initMap() {
-        // Coordenadas do centro do mapa
-        var center = L.latLng(-23.5505, -46.6333);
-
-        // Criação do mapa
-        var map = L.map("map").setView(center, 10);
-
-        // Camada de azulejos (tiles) do OpenStreetMap
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: "&copy; OpenStreetMap contributors"
-        }).addTo(map);
-
-        // Array de pontos geográficos
-        var pontos = [
-          { lat: -23.5505, lng: -46.6333, nome: "São Paulo" },
-          { lat: -22.9068, lng: -43.1729, nome: "Rio de Janeiro" },
-          { lat: -15.7801, lng: -47.9292, nome: "Brasília" }
-          // Adicione mais pontos conforme necessário
-        ];
-
-        // Adiciona os marcadores no mapa
-        pontos.forEach(function(ponto) {
-          var marker = L.marker([ponto.lat, ponto.lng]).addTo(map);
-          marker.bindPopup(ponto.nome);
+<script type="text/javascript">
+  //Inserir aqui o código para criação do mapa na tela principal
+      // Criando a camada de mapabase OSM
+      var osm = new ol.layer.Tile({
+              source: new ol.source.OSM()
+          });
+      //Chamada para a camada de Unidades da SEMA-MT
+    var semaWMS = new ol.source.TileWMS({
+                      url: 'http://localhost:8080/geoserver/projeto_final/wms',
+                      params: {'LAYERS':'projeto_final:Unidades_SEMA_MT', 'TILED':false},
+                      serverType: 'geoserver',  
+                  });
+      var unSema = new ol.layer.Tile({
+                  source: semaWMS,
+                  visible: true,
+                  className: 'UnidadesSEMA',
+          });
+      var municipios = new ol.layer.Tile({
+                  source: new ol.source.TileWMS({
+                      url: 'http://localhost:8080/geoserver/projeto_final/wms',
+                      params: {'LAYERS':'projeto_final:Municipios_MT', 'TILED':true},
+                      serverType: 'municipiosMT',  
+                  }),
+                  visible: true,
+                  className: 'Desmatamento',
+          });
+    var visualizacao = new ol.View({
+          center: ol.proj.fromLonLat([-55.89, -13.47]),
+          zoom: 6
         });
-      }
+      var map = new ol.Map({
+        target: 'map',
+        layers: [osm, municipios, unSema],
+        view: visualizacao
+  
+      });
+    //Chamada serviço WMS de consulta às informações de feição
+    map.on('singleclick', function (evt) {
+      // Função que retorna o painnel de informação para seu estado original
+      zeraConteudo();
+      var viewResolution = /** @type {number} */ (visualizacao.getResolution());
+      var url = semaWMS.getFeatureInfoUrl(
+        evt.coordinate,
+        viewResolution,
+        'EPSG:3857',
+        {'INFO_FORMAT': 'application/json'}
+  
+        );
+      if (url) {
+        fetch(url)
+          .then(function (response) { return response.text(); })
+          .then(function (html) {
+            var objJSON = JSON.parse(html);
+            //alert(Object.keys(objJSON.features[0].properties))
+            var propriedades = objJSON.features[0].properties;
+            document.getElementById("nomeUnidade").innerHTML = propriedades.NOME;
+            document.getElementById("nomeExtenso").innerHTML = propriedades.NOME_EXTEN;
+            document.getElementById("lat").innerHTML = propriedades.LAT;
+            document.getElementById("long").innerHTML = propriedades.LONG;
+            document.getElementById("fonte").innerHTML = propriedades.FONTE;
+          });
+        }
+    });
+    function zeraConteudo(){
+      document.getElementById("nomeUnidade").innerHTML = "Selecione uma Unidade";
+      document.getElementById("nomeExtenso").innerHTML = "";
+      document.getElementById("lat").innerHTML = "";
+      document.getElementById("long").innerHTML = "";
+      document.getElementById("fonte").innerHTML = "";
+    }
     </script>
-    <script>initMap();</script>
-</body>
-</html>
+  </body>
+  </html>
