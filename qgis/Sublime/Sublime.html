@@ -24,7 +24,6 @@
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
-        <script src="js/leaflet-svg-shape-markers.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -33,17 +32,16 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Limite_Sublime_2.js"></script>
-        <script src="data/Vegetacao_abrir_3.js"></script>
-        <script src="data/Reserva_Legal_4.js"></script>
-        <script src="data/Regeneracao_5.js"></script>
-        <script src="data/Pecuaria_6.js"></script>
-        <script src="data/Estradas_internas_7.js"></script>
-        <script src="data/Curso_dagua_8.js"></script>
-        <script src="data/Benfeitorias_9.js"></script>
-        <script src="data/APP_10.js"></script>
-        <script src="data/Agricultura_11.js"></script>
-        <script src="data/Sede_12.js"></script>
+        <script src="data/Vegetacao_abrir84442ha_2.js"></script>
+        <script src="data/Reserva_Legal3509234552ha_3.js"></script>
+        <script src="data/Regeneracao864ha_4.js"></script>
+        <script src="data/Limite_Sublime668371ha_5.js"></script>
+        <script src="data/Estradas_internas2137ha_6.js"></script>
+        <script src="data/Hidrografia581ha_7.js"></script>
+        <script src="data/Benfeitorias485ha_8.js"></script>
+        <script src="data/APP4165ha_9.js"></script>
+        <script src="data/Agricultura188017ha_10.js"></script>
+        <script src="data/Pecuria152308ha_11.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -63,7 +61,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-14.134336529777649,-57.83337259731404],[-14.042051067767472,-57.667345413220325]]);
+        }).fitBounds([[-14.139819598940834,-57.84843529526687],[-14.011620789118114,-57.66337411011966]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -100,64 +98,7 @@
                                               {pane: 'pane_Cores_verdadeiras_abril_2023_1'});
         bounds_group.addLayer(layer_Cores_verdadeiras_abril_2023_1);
         map.addLayer(layer_Cores_verdadeiras_abril_2023_1);
-        function pop_Limite_Sublime_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NOME'] !== null ? autolinker.link(feature.properties['NOME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AREA_HA'] !== null ? autolinker.link(feature.properties['AREA_HA'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_Limite_Sublime_2_0() {
-            return {
-                pane: 'pane_Limite_Sublime_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 5.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Limite_Sublime_2');
-        map.getPane('pane_Limite_Sublime_2').style.zIndex = 402;
-        map.getPane('pane_Limite_Sublime_2').style['mix-blend-mode'] = 'normal';
-        var layer_Limite_Sublime_2 = new L.geoJson(json_Limite_Sublime_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Limite_Sublime_2',
-            layerName: 'layer_Limite_Sublime_2',
-            pane: 'pane_Limite_Sublime_2',
-            onEachFeature: pop_Limite_Sublime_2,
-            style: style_Limite_Sublime_2_0,
-        });
-        bounds_group.addLayer(layer_Limite_Sublime_2);
-        map.addLayer(layer_Limite_Sublime_2);
-        function pop_Vegetacao_abrir_3(feature, layer) {
+        function pop_Vegetacao_abrir84442ha_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -193,9 +134,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Vegetacao_abrir_3_0() {
+        function style_Vegetacao_abrir84442ha_2_0() {
             return {
-                pane: 'pane_Vegetacao_abrir_3',
+                pane: 'pane_Vegetacao_abrir84442ha_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -208,21 +149,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Vegetacao_abrir_3');
-        map.getPane('pane_Vegetacao_abrir_3').style.zIndex = 403;
-        map.getPane('pane_Vegetacao_abrir_3').style['mix-blend-mode'] = 'normal';
-        var layer_Vegetacao_abrir_3 = new L.geoJson(json_Vegetacao_abrir_3, {
+        map.createPane('pane_Vegetacao_abrir84442ha_2');
+        map.getPane('pane_Vegetacao_abrir84442ha_2').style.zIndex = 402;
+        map.getPane('pane_Vegetacao_abrir84442ha_2').style['mix-blend-mode'] = 'normal';
+        var layer_Vegetacao_abrir84442ha_2 = new L.geoJson(json_Vegetacao_abrir84442ha_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Vegetacao_abrir_3',
-            layerName: 'layer_Vegetacao_abrir_3',
-            pane: 'pane_Vegetacao_abrir_3',
-            onEachFeature: pop_Vegetacao_abrir_3,
-            style: style_Vegetacao_abrir_3_0,
+            dataVar: 'json_Vegetacao_abrir84442ha_2',
+            layerName: 'layer_Vegetacao_abrir84442ha_2',
+            pane: 'pane_Vegetacao_abrir84442ha_2',
+            onEachFeature: pop_Vegetacao_abrir84442ha_2,
+            style: style_Vegetacao_abrir84442ha_2_0,
         });
-        bounds_group.addLayer(layer_Vegetacao_abrir_3);
-        map.addLayer(layer_Vegetacao_abrir_3);
-        function pop_Reserva_Legal_4(feature, layer) {
+        bounds_group.addLayer(layer_Vegetacao_abrir84442ha_2);
+        map.addLayer(layer_Vegetacao_abrir84442ha_2);
+        function pop_Reserva_Legal3509234552ha_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -249,9 +190,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Reserva_Legal_4_0() {
+        function style_Reserva_Legal3509234552ha_3_0() {
             return {
-                pane: 'pane_Reserva_Legal_4',
+                pane: 'pane_Reserva_Legal3509234552ha_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -264,21 +205,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Reserva_Legal_4');
-        map.getPane('pane_Reserva_Legal_4').style.zIndex = 404;
-        map.getPane('pane_Reserva_Legal_4').style['mix-blend-mode'] = 'normal';
-        var layer_Reserva_Legal_4 = new L.geoJson(json_Reserva_Legal_4, {
+        map.createPane('pane_Reserva_Legal3509234552ha_3');
+        map.getPane('pane_Reserva_Legal3509234552ha_3').style.zIndex = 403;
+        map.getPane('pane_Reserva_Legal3509234552ha_3').style['mix-blend-mode'] = 'normal';
+        var layer_Reserva_Legal3509234552ha_3 = new L.geoJson(json_Reserva_Legal3509234552ha_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Reserva_Legal_4',
-            layerName: 'layer_Reserva_Legal_4',
-            pane: 'pane_Reserva_Legal_4',
-            onEachFeature: pop_Reserva_Legal_4,
-            style: style_Reserva_Legal_4_0,
+            dataVar: 'json_Reserva_Legal3509234552ha_3',
+            layerName: 'layer_Reserva_Legal3509234552ha_3',
+            pane: 'pane_Reserva_Legal3509234552ha_3',
+            onEachFeature: pop_Reserva_Legal3509234552ha_3,
+            style: style_Reserva_Legal3509234552ha_3_0,
         });
-        bounds_group.addLayer(layer_Reserva_Legal_4);
-        map.addLayer(layer_Reserva_Legal_4);
-        function pop_Regeneracao_5(feature, layer) {
+        bounds_group.addLayer(layer_Reserva_Legal3509234552ha_3);
+        map.addLayer(layer_Reserva_Legal3509234552ha_3);
+        function pop_Regeneracao864ha_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -305,9 +246,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Regeneracao_5_0() {
+        function style_Regeneracao864ha_4_0() {
             return {
-                pane: 'pane_Regeneracao_5',
+                pane: 'pane_Regeneracao864ha_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -320,21 +261,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Regeneracao_5');
-        map.getPane('pane_Regeneracao_5').style.zIndex = 405;
-        map.getPane('pane_Regeneracao_5').style['mix-blend-mode'] = 'normal';
-        var layer_Regeneracao_5 = new L.geoJson(json_Regeneracao_5, {
+        map.createPane('pane_Regeneracao864ha_4');
+        map.getPane('pane_Regeneracao864ha_4').style.zIndex = 404;
+        map.getPane('pane_Regeneracao864ha_4').style['mix-blend-mode'] = 'normal';
+        var layer_Regeneracao864ha_4 = new L.geoJson(json_Regeneracao864ha_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Regeneracao_5',
-            layerName: 'layer_Regeneracao_5',
-            pane: 'pane_Regeneracao_5',
-            onEachFeature: pop_Regeneracao_5,
-            style: style_Regeneracao_5_0,
+            dataVar: 'json_Regeneracao864ha_4',
+            layerName: 'layer_Regeneracao864ha_4',
+            pane: 'pane_Regeneracao864ha_4',
+            onEachFeature: pop_Regeneracao864ha_4,
+            style: style_Regeneracao864ha_4_0,
         });
-        bounds_group.addLayer(layer_Regeneracao_5);
-        map.addLayer(layer_Regeneracao_5);
-        function pop_Pecuaria_6(feature, layer) {
+        bounds_group.addLayer(layer_Regeneracao864ha_4);
+        map.addLayer(layer_Regeneracao864ha_4);
+        function pop_Limite_Sublime668371ha_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -355,7 +296,7 @@
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Talhão'] !== null ? autolinker.link(feature.properties['Talhão'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['NOME'] !== null ? autolinker.link(feature.properties['NOME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['AREA_HA'] !== null ? autolinker.link(feature.properties['AREA_HA'].toLocaleString()) : '') + '</td>\
@@ -364,11 +305,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Pecuaria_6_0() {
+        function style_Limite_Sublime668371ha_5_0() {
             return {
-                pane: 'pane_Pecuaria_6',
+                pane: 'pane_Limite_Sublime668371ha_5',
                 opacity: 1,
-                color: 'rgba(166,206,227,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -377,21 +318,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Pecuaria_6');
-        map.getPane('pane_Pecuaria_6').style.zIndex = 406;
-        map.getPane('pane_Pecuaria_6').style['mix-blend-mode'] = 'normal';
-        var layer_Pecuaria_6 = new L.geoJson(json_Pecuaria_6, {
+        map.createPane('pane_Limite_Sublime668371ha_5');
+        map.getPane('pane_Limite_Sublime668371ha_5').style.zIndex = 405;
+        map.getPane('pane_Limite_Sublime668371ha_5').style['mix-blend-mode'] = 'normal';
+        var layer_Limite_Sublime668371ha_5 = new L.geoJson(json_Limite_Sublime668371ha_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Pecuaria_6',
-            layerName: 'layer_Pecuaria_6',
-            pane: 'pane_Pecuaria_6',
-            onEachFeature: pop_Pecuaria_6,
-            style: style_Pecuaria_6_0,
+            dataVar: 'json_Limite_Sublime668371ha_5',
+            layerName: 'layer_Limite_Sublime668371ha_5',
+            pane: 'pane_Limite_Sublime668371ha_5',
+            onEachFeature: pop_Limite_Sublime668371ha_5,
+            style: style_Limite_Sublime668371ha_5_0,
         });
-        bounds_group.addLayer(layer_Pecuaria_6);
-        map.addLayer(layer_Pecuaria_6);
-        function pop_Estradas_internas_7(feature, layer) {
+        bounds_group.addLayer(layer_Limite_Sublime668371ha_5);
+        map.addLayer(layer_Limite_Sublime668371ha_5);
+        function pop_Estradas_internas2137ha_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -418,9 +359,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Estradas_internas_7_0() {
+        function style_Estradas_internas2137ha_6_0() {
             return {
-                pane: 'pane_Estradas_internas_7',
+                pane: 'pane_Estradas_internas2137ha_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -433,21 +374,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Estradas_internas_7');
-        map.getPane('pane_Estradas_internas_7').style.zIndex = 407;
-        map.getPane('pane_Estradas_internas_7').style['mix-blend-mode'] = 'normal';
-        var layer_Estradas_internas_7 = new L.geoJson(json_Estradas_internas_7, {
+        map.createPane('pane_Estradas_internas2137ha_6');
+        map.getPane('pane_Estradas_internas2137ha_6').style.zIndex = 406;
+        map.getPane('pane_Estradas_internas2137ha_6').style['mix-blend-mode'] = 'normal';
+        var layer_Estradas_internas2137ha_6 = new L.geoJson(json_Estradas_internas2137ha_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Estradas_internas_7',
-            layerName: 'layer_Estradas_internas_7',
-            pane: 'pane_Estradas_internas_7',
-            onEachFeature: pop_Estradas_internas_7,
-            style: style_Estradas_internas_7_0,
+            dataVar: 'json_Estradas_internas2137ha_6',
+            layerName: 'layer_Estradas_internas2137ha_6',
+            pane: 'pane_Estradas_internas2137ha_6',
+            onEachFeature: pop_Estradas_internas2137ha_6,
+            style: style_Estradas_internas2137ha_6_0,
         });
-        bounds_group.addLayer(layer_Estradas_internas_7);
-        map.addLayer(layer_Estradas_internas_7);
-        function pop_Curso_dagua_8(feature, layer) {
+        bounds_group.addLayer(layer_Estradas_internas2137ha_6);
+        map.addLayer(layer_Estradas_internas2137ha_6);
+        function pop_Hidrografia581ha_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -474,9 +415,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Curso_dagua_8_0() {
+        function style_Hidrografia581ha_7_0() {
             return {
-                pane: 'pane_Curso_dagua_8',
+                pane: 'pane_Hidrografia581ha_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -489,21 +430,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Curso_dagua_8');
-        map.getPane('pane_Curso_dagua_8').style.zIndex = 408;
-        map.getPane('pane_Curso_dagua_8').style['mix-blend-mode'] = 'normal';
-        var layer_Curso_dagua_8 = new L.geoJson(json_Curso_dagua_8, {
+        map.createPane('pane_Hidrografia581ha_7');
+        map.getPane('pane_Hidrografia581ha_7').style.zIndex = 407;
+        map.getPane('pane_Hidrografia581ha_7').style['mix-blend-mode'] = 'normal';
+        var layer_Hidrografia581ha_7 = new L.geoJson(json_Hidrografia581ha_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Curso_dagua_8',
-            layerName: 'layer_Curso_dagua_8',
-            pane: 'pane_Curso_dagua_8',
-            onEachFeature: pop_Curso_dagua_8,
-            style: style_Curso_dagua_8_0,
+            dataVar: 'json_Hidrografia581ha_7',
+            layerName: 'layer_Hidrografia581ha_7',
+            pane: 'pane_Hidrografia581ha_7',
+            onEachFeature: pop_Hidrografia581ha_7,
+            style: style_Hidrografia581ha_7_0,
         });
-        bounds_group.addLayer(layer_Curso_dagua_8);
-        map.addLayer(layer_Curso_dagua_8);
-        function pop_Benfeitorias_9(feature, layer) {
+        bounds_group.addLayer(layer_Hidrografia581ha_7);
+        map.addLayer(layer_Hidrografia581ha_7);
+        function pop_Benfeitorias485ha_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -530,9 +471,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Benfeitorias_9_0() {
+        function style_Benfeitorias485ha_8_0() {
             return {
-                pane: 'pane_Benfeitorias_9',
+                pane: 'pane_Benfeitorias485ha_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -541,25 +482,25 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(145,82,45,1.0)',
+                fillColor: 'rgba(125,139,143,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Benfeitorias_9');
-        map.getPane('pane_Benfeitorias_9').style.zIndex = 409;
-        map.getPane('pane_Benfeitorias_9').style['mix-blend-mode'] = 'normal';
-        var layer_Benfeitorias_9 = new L.geoJson(json_Benfeitorias_9, {
+        map.createPane('pane_Benfeitorias485ha_8');
+        map.getPane('pane_Benfeitorias485ha_8').style.zIndex = 408;
+        map.getPane('pane_Benfeitorias485ha_8').style['mix-blend-mode'] = 'normal';
+        var layer_Benfeitorias485ha_8 = new L.geoJson(json_Benfeitorias485ha_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Benfeitorias_9',
-            layerName: 'layer_Benfeitorias_9',
-            pane: 'pane_Benfeitorias_9',
-            onEachFeature: pop_Benfeitorias_9,
-            style: style_Benfeitorias_9_0,
+            dataVar: 'json_Benfeitorias485ha_8',
+            layerName: 'layer_Benfeitorias485ha_8',
+            pane: 'pane_Benfeitorias485ha_8',
+            onEachFeature: pop_Benfeitorias485ha_8,
+            style: style_Benfeitorias485ha_8_0,
         });
-        bounds_group.addLayer(layer_Benfeitorias_9);
-        map.addLayer(layer_Benfeitorias_9);
-        function pop_APP_10(feature, layer) {
+        bounds_group.addLayer(layer_Benfeitorias485ha_8);
+        map.addLayer(layer_Benfeitorias485ha_8);
+        function pop_APP4165ha_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -586,9 +527,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_APP_10_0() {
+        function style_APP4165ha_9_0() {
             return {
-                pane: 'pane_APP_10',
+                pane: 'pane_APP4165ha_9',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -601,21 +542,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_APP_10');
-        map.getPane('pane_APP_10').style.zIndex = 410;
-        map.getPane('pane_APP_10').style['mix-blend-mode'] = 'normal';
-        var layer_APP_10 = new L.geoJson(json_APP_10, {
+        map.createPane('pane_APP4165ha_9');
+        map.getPane('pane_APP4165ha_9').style.zIndex = 409;
+        map.getPane('pane_APP4165ha_9').style['mix-blend-mode'] = 'normal';
+        var layer_APP4165ha_9 = new L.geoJson(json_APP4165ha_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_APP_10',
-            layerName: 'layer_APP_10',
-            pane: 'pane_APP_10',
-            onEachFeature: pop_APP_10,
-            style: style_APP_10_0,
+            dataVar: 'json_APP4165ha_9',
+            layerName: 'layer_APP4165ha_9',
+            pane: 'pane_APP4165ha_9',
+            onEachFeature: pop_APP4165ha_9,
+            style: style_APP4165ha_9_0,
         });
-        bounds_group.addLayer(layer_APP_10);
-        map.addLayer(layer_APP_10);
-        function pop_Agricultura_11(feature, layer) {
+        bounds_group.addLayer(layer_APP4165ha_9);
+        map.addLayer(layer_APP4165ha_9);
+        function pop_Agricultura188017ha_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -645,11 +586,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Agricultura_11_0() {
+        function style_Agricultura188017ha_10_0() {
             return {
-                pane: 'pane_Agricultura_11',
+                pane: 'pane_Agricultura188017ha_10',
                 opacity: 1,
-                color: 'rgba(245,221,7,1.0)',
+                color: 'rgba(236,239,34,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -658,21 +599,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Agricultura_11');
-        map.getPane('pane_Agricultura_11').style.zIndex = 411;
-        map.getPane('pane_Agricultura_11').style['mix-blend-mode'] = 'normal';
-        var layer_Agricultura_11 = new L.geoJson(json_Agricultura_11, {
+        map.createPane('pane_Agricultura188017ha_10');
+        map.getPane('pane_Agricultura188017ha_10').style.zIndex = 410;
+        map.getPane('pane_Agricultura188017ha_10').style['mix-blend-mode'] = 'normal';
+        var layer_Agricultura188017ha_10 = new L.geoJson(json_Agricultura188017ha_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Agricultura_11',
-            layerName: 'layer_Agricultura_11',
-            pane: 'pane_Agricultura_11',
-            onEachFeature: pop_Agricultura_11,
-            style: style_Agricultura_11_0,
+            dataVar: 'json_Agricultura188017ha_10',
+            layerName: 'layer_Agricultura188017ha_10',
+            pane: 'pane_Agricultura188017ha_10',
+            onEachFeature: pop_Agricultura188017ha_10,
+            style: style_Agricultura188017ha_10_0,
         });
-        bounds_group.addLayer(layer_Agricultura_11);
-        map.addLayer(layer_Agricultura_11);
-        function pop_Sede_12(feature, layer) {
+        bounds_group.addLayer(layer_Agricultura188017ha_10);
+        map.addLayer(layer_Agricultura188017ha_10);
+        function pop_Pecuria152308ha_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -692,57 +633,53 @@
                     <tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Talhão'] !== null ? autolinker.link(feature.properties['Talhão'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AREA_HA'] !== null ? autolinker.link(feature.properties['AREA_HA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Sede_12_0() {
+        function style_Pecuria152308ha_11_0() {
             return {
-                pane: 'pane_Sede_12',
-                shape: 'triangle',
-                radius: 20.0,
+                pane: 'pane_Pecuria152308ha_11',
                 opacity: 1,
-                color: 'rgba(50,87,128,1.0)',
+                color: 'rgba(166,206,227,1.0)',
                 dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(72,123,182,1.0)',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
                 interactive: true,
             }
         }
-        map.createPane('pane_Sede_12');
-        map.getPane('pane_Sede_12').style.zIndex = 412;
-        map.getPane('pane_Sede_12').style['mix-blend-mode'] = 'normal';
-        var layer_Sede_12 = new L.geoJson(json_Sede_12, {
+        map.createPane('pane_Pecuria152308ha_11');
+        map.getPane('pane_Pecuria152308ha_11').style.zIndex = 411;
+        map.getPane('pane_Pecuria152308ha_11').style['mix-blend-mode'] = 'normal';
+        var layer_Pecuria152308ha_11 = new L.geoJson(json_Pecuria152308ha_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Sede_12',
-            layerName: 'layer_Sede_12',
-            pane: 'pane_Sede_12',
-            onEachFeature: pop_Sede_12,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.shapeMarker(latlng, style_Sede_12_0(feature));
-            },
+            dataVar: 'json_Pecuria152308ha_11',
+            layerName: 'layer_Pecuria152308ha_11',
+            pane: 'pane_Pecuria152308ha_11',
+            onEachFeature: pop_Pecuria152308ha_11,
+            style: style_Pecuria152308ha_11_0,
         });
-        bounds_group.addLayer(layer_Sede_12);
-        map.addLayer(layer_Sede_12);
+        bounds_group.addLayer(layer_Pecuria152308ha_11);
+        map.addLayer(layer_Pecuria152308ha_11);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Sede_12.png" /> Sede': layer_Sede_12,'<img src="legend/Agricultura_11.png" /> Agricultura': layer_Agricultura_11,'<img src="legend/APP_10.png" /> APP': layer_APP_10,'<img src="legend/Benfeitorias_9.png" /> Benfeitorias': layer_Benfeitorias_9,'<img src="legend/Curso_dagua_8.png" /> Curso_dagua': layer_Curso_dagua_8,'<img src="legend/Estradas_internas_7.png" /> Estradas_internas': layer_Estradas_internas_7,'<img src="legend/Pecuaria_6.png" /> Pecuaria': layer_Pecuaria_6,'<img src="legend/Regeneracao_5.png" /> Regeneracao': layer_Regeneracao_5,'<img src="legend/Reserva_Legal_4.png" /> Reserva_Legal': layer_Reserva_Legal_4,'<img src="legend/Vegetacao_abrir_3.png" /> Vegetacao_abrir': layer_Vegetacao_abrir_3,'<img src="legend/Limite_Sublime_2.png" /> Limite_Sublime': layer_Limite_Sublime_2,"Cores_verdadeiras_abril_2023": layer_Cores_verdadeiras_abril_2023_1,"NDVI_abril_2023": layer_NDVI_abril_2023_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Pecuria152308ha_11.png" /> Pecuária - 1.523,08 ha': layer_Pecuria152308ha_11,'<img src="legend/Agricultura188017ha_10.png" /> Agricultura - 1.880,17 ha': layer_Agricultura188017ha_10,'<img src="legend/APP4165ha_9.png" /> APP - 41,65 ha': layer_APP4165ha_9,'<img src="legend/Benfeitorias485ha_8.png" /> Benfeitorias - 4,85 ha': layer_Benfeitorias485ha_8,'<img src="legend/Hidrografia581ha_7.png" /> Hidrografia - 5,81 ha': layer_Hidrografia581ha_7,'<img src="legend/Estradas_internas2137ha_6.png" /> Estradas_internas - 21,37 ha': layer_Estradas_internas2137ha_6,'<img src="legend/Limite_Sublime668371ha_5.png" /> Limite_Sublime - 6.683,71 ha': layer_Limite_Sublime668371ha_5,'<img src="legend/Regeneracao864ha_4.png" /> Regeneracao - 8,64 ha': layer_Regeneracao864ha_4,'<img src="legend/Reserva_Legal3509234552ha_3.png" /> Reserva_Legal (35,09%) - 2.345,52  ha': layer_Reserva_Legal3509234552ha_3,'<img src="legend/Vegetacao_abrir84442ha_2.png" /> Vegetacao_abrir - 844,42 ha': layer_Vegetacao_abrir84442ha_2,"Cores_verdadeiras_abril_2023": layer_Cores_verdadeiras_abril_2023_1,"NDVI_abril_2023": layer_NDVI_abril_2023_0,}).addTo(map);
         setBounds();
         var i = 0;
-        layer_Pecuaria_6.eachLayer(function(layer) {
+        layer_Agricultura188017ha_10.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Talhão'] !== null?String('<div style="color: #323232; font-size: 30pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Talhão']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pecuaria_6'});
+            layer.bindTooltip((layer.feature.properties['Talhão'] !== null?String('<div style="color: #000000; font-size: 30pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Talhão']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Agricultura188017ha_10'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -750,12 +687,12 @@
               i++;
         });
         var i = 0;
-        layer_Agricultura_11.eachLayer(function(layer) {
+        layer_Pecuria152308ha_11.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Talhão'] !== null?String('<div style="color: #323232; font-size: 30pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Talhão']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Agricultura_11'});
+            layer.bindTooltip((layer.feature.properties['Talhão'] !== null?String('<div style="color: #000000; font-size: 30pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Talhão']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Pecuria152308ha_11'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -767,15 +704,15 @@
                 return this._bounds;
             }
         });
-        resetLabels([layer_Pecuaria_6,layer_Agricultura_11]);
+        resetLabels([layer_Agricultura188017ha_10,layer_Pecuria152308ha_11]);
         map.on("zoomend", function(){
-            resetLabels([layer_Pecuaria_6,layer_Agricultura_11]);
+            resetLabels([layer_Agricultura188017ha_10,layer_Pecuria152308ha_11]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Pecuaria_6,layer_Agricultura_11]);
+            resetLabels([layer_Agricultura188017ha_10,layer_Pecuria152308ha_11]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Pecuaria_6,layer_Agricultura_11]);
+            resetLabels([layer_Agricultura188017ha_10,layer_Pecuria152308ha_11]);
         });
         </script>
     </body>
