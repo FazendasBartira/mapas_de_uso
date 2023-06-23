@@ -1,0 +1,1 @@
+var json_Pista_aviao_12 = {"type":"FeatureCollection","name":"Pista_aviao_12","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"fid":"1"},"geometry":{"type":"Point","coordinates":[-53.179809518899312,-18.719547443874301]}}]}

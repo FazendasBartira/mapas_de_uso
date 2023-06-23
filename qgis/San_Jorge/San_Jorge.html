@@ -35,15 +35,16 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/Limites_San_Jorge_2.js"></script>
-        <script src="data/AREA_EM_REGENERACAO_3.js"></script>
-        <script src="data/INFRAESTRUTURA_4.js"></script>
-        <script src="data/RODOVIA_MS_316_5.js"></script>
-        <script src="data/VNabrir_6.js"></script>
-        <script src="data/RL_7.js"></script>
-        <script src="data/APP_8.js"></script>
-        <script src="data/LAVOURA_SOJA_9.js"></script>
-        <script src="data/LAVOURA_CANA_10.js"></script>
+        <script src="data/Regenerao649ha_3.js"></script>
+        <script src="data/Benfeitorias4476ha_4.js"></script>
+        <script src="data/RODOVIA_MS_316856ha_5.js"></script>
+        <script src="data/VNabrir2827ha_6.js"></script>
+        <script src="data/RL2004106184ha_7.js"></script>
+        <script src="data/APP464ha_8.js"></script>
+        <script src="data/Lavoura_soja208204ha_9.js"></script>
+        <script src="data/Lavoura_cana205582ha_10.js"></script>
         <script src="data/Sede_11.js"></script>
+        <script src="data/Pista_aviao_12.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -63,7 +64,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-18.762164031385,-53.247068779498356],[-18.65337573815908,-53.09044727520887]]);
+        }).fitBounds([[-18.761060920746957,-53.244132553066464],[-18.652308003501574,-53.122376045894455]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -154,7 +155,7 @@
         });
         bounds_group.addLayer(layer_Limites_San_Jorge_2);
         map.addLayer(layer_Limites_San_Jorge_2);
-        function pop_AREA_EM_REGENERACAO_3(feature, layer) {
+        function pop_Regenerao649ha_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -178,9 +179,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_AREA_EM_REGENERACAO_3_0() {
+        function style_Regenerao649ha_3_0() {
             return {
-                pane: 'pane_AREA_EM_REGENERACAO_3',
+                pane: 'pane_Regenerao649ha_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -193,21 +194,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_AREA_EM_REGENERACAO_3');
-        map.getPane('pane_AREA_EM_REGENERACAO_3').style.zIndex = 403;
-        map.getPane('pane_AREA_EM_REGENERACAO_3').style['mix-blend-mode'] = 'normal';
-        var layer_AREA_EM_REGENERACAO_3 = new L.geoJson(json_AREA_EM_REGENERACAO_3, {
+        map.createPane('pane_Regenerao649ha_3');
+        map.getPane('pane_Regenerao649ha_3').style.zIndex = 403;
+        map.getPane('pane_Regenerao649ha_3').style['mix-blend-mode'] = 'normal';
+        var layer_Regenerao649ha_3 = new L.geoJson(json_Regenerao649ha_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AREA_EM_REGENERACAO_3',
-            layerName: 'layer_AREA_EM_REGENERACAO_3',
-            pane: 'pane_AREA_EM_REGENERACAO_3',
-            onEachFeature: pop_AREA_EM_REGENERACAO_3,
-            style: style_AREA_EM_REGENERACAO_3_0,
+            dataVar: 'json_Regenerao649ha_3',
+            layerName: 'layer_Regenerao649ha_3',
+            pane: 'pane_Regenerao649ha_3',
+            onEachFeature: pop_Regenerao649ha_3,
+            style: style_Regenerao649ha_3_0,
         });
-        bounds_group.addLayer(layer_AREA_EM_REGENERACAO_3);
-        map.addLayer(layer_AREA_EM_REGENERACAO_3);
-        function pop_INFRAESTRUTURA_4(feature, layer) {
+        bounds_group.addLayer(layer_Regenerao649ha_3);
+        map.addLayer(layer_Regenerao649ha_3);
+        function pop_Benfeitorias4476ha_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -231,9 +232,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_INFRAESTRUTURA_4_0() {
+        function style_Benfeitorias4476ha_4_0() {
             return {
-                pane: 'pane_INFRAESTRUTURA_4',
+                pane: 'pane_Benfeitorias4476ha_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -246,21 +247,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_INFRAESTRUTURA_4');
-        map.getPane('pane_INFRAESTRUTURA_4').style.zIndex = 404;
-        map.getPane('pane_INFRAESTRUTURA_4').style['mix-blend-mode'] = 'normal';
-        var layer_INFRAESTRUTURA_4 = new L.geoJson(json_INFRAESTRUTURA_4, {
+        map.createPane('pane_Benfeitorias4476ha_4');
+        map.getPane('pane_Benfeitorias4476ha_4').style.zIndex = 404;
+        map.getPane('pane_Benfeitorias4476ha_4').style['mix-blend-mode'] = 'normal';
+        var layer_Benfeitorias4476ha_4 = new L.geoJson(json_Benfeitorias4476ha_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_INFRAESTRUTURA_4',
-            layerName: 'layer_INFRAESTRUTURA_4',
-            pane: 'pane_INFRAESTRUTURA_4',
-            onEachFeature: pop_INFRAESTRUTURA_4,
-            style: style_INFRAESTRUTURA_4_0,
+            dataVar: 'json_Benfeitorias4476ha_4',
+            layerName: 'layer_Benfeitorias4476ha_4',
+            pane: 'pane_Benfeitorias4476ha_4',
+            onEachFeature: pop_Benfeitorias4476ha_4,
+            style: style_Benfeitorias4476ha_4_0,
         });
-        bounds_group.addLayer(layer_INFRAESTRUTURA_4);
-        map.addLayer(layer_INFRAESTRUTURA_4);
-        function pop_RODOVIA_MS_316_5(feature, layer) {
+        bounds_group.addLayer(layer_Benfeitorias4476ha_4);
+        map.addLayer(layer_Benfeitorias4476ha_4);
+        function pop_RODOVIA_MS_316856ha_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -284,9 +285,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_RODOVIA_MS_316_5_0() {
+        function style_RODOVIA_MS_316856ha_5_0() {
             return {
-                pane: 'pane_RODOVIA_MS_316_5',
+                pane: 'pane_RODOVIA_MS_316856ha_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -295,25 +296,25 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(145,82,45,1.0)',
+                fillColor: 'rgba(161,131,175,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_RODOVIA_MS_316_5');
-        map.getPane('pane_RODOVIA_MS_316_5').style.zIndex = 405;
-        map.getPane('pane_RODOVIA_MS_316_5').style['mix-blend-mode'] = 'normal';
-        var layer_RODOVIA_MS_316_5 = new L.geoJson(json_RODOVIA_MS_316_5, {
+        map.createPane('pane_RODOVIA_MS_316856ha_5');
+        map.getPane('pane_RODOVIA_MS_316856ha_5').style.zIndex = 405;
+        map.getPane('pane_RODOVIA_MS_316856ha_5').style['mix-blend-mode'] = 'normal';
+        var layer_RODOVIA_MS_316856ha_5 = new L.geoJson(json_RODOVIA_MS_316856ha_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RODOVIA_MS_316_5',
-            layerName: 'layer_RODOVIA_MS_316_5',
-            pane: 'pane_RODOVIA_MS_316_5',
-            onEachFeature: pop_RODOVIA_MS_316_5,
-            style: style_RODOVIA_MS_316_5_0,
+            dataVar: 'json_RODOVIA_MS_316856ha_5',
+            layerName: 'layer_RODOVIA_MS_316856ha_5',
+            pane: 'pane_RODOVIA_MS_316856ha_5',
+            onEachFeature: pop_RODOVIA_MS_316856ha_5,
+            style: style_RODOVIA_MS_316856ha_5_0,
         });
-        bounds_group.addLayer(layer_RODOVIA_MS_316_5);
-        map.addLayer(layer_RODOVIA_MS_316_5);
-        function pop_VNabrir_6(feature, layer) {
+        bounds_group.addLayer(layer_RODOVIA_MS_316856ha_5);
+        map.addLayer(layer_RODOVIA_MS_316856ha_5);
+        function pop_VNabrir2827ha_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -340,9 +341,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_VNabrir_6_0() {
+        function style_VNabrir2827ha_6_0() {
             return {
-                pane: 'pane_VNabrir_6',
+                pane: 'pane_VNabrir2827ha_6',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -355,7 +356,7 @@
                 interactive: true,
             }
         }
-        var pattern_VNabrir_6_1 = new L.StripePattern({
+        var pattern_VNabrir2827ha_6_1 = new L.StripePattern({
             weight: 0.36,
             spaceWeight: 3.0,
             color: '#b2df8a',
@@ -363,31 +364,31 @@
             spaceOpacity: 0,
             angle: 315
         });
-        pattern_VNabrir_6_1.addTo(map);
-        function style_VNabrir_6_1() {
+        pattern_VNabrir2827ha_6_1.addTo(map);
+        function style_VNabrir2827ha_6_1() {
             return {
-                pane: 'pane_VNabrir_6',
+                pane: 'pane_VNabrir2827ha_6',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_VNabrir_6_1,
+                fillPattern: pattern_VNabrir2827ha_6_1,
                 interactive: true,
             }
         }
-        map.createPane('pane_VNabrir_6');
-        map.getPane('pane_VNabrir_6').style.zIndex = 406;
-        map.getPane('pane_VNabrir_6').style['mix-blend-mode'] = 'normal';
-        var layer_VNabrir_6 = new L.geoJson.multiStyle(json_VNabrir_6, {
+        map.createPane('pane_VNabrir2827ha_6');
+        map.getPane('pane_VNabrir2827ha_6').style.zIndex = 406;
+        map.getPane('pane_VNabrir2827ha_6').style['mix-blend-mode'] = 'normal';
+        var layer_VNabrir2827ha_6 = new L.geoJson.multiStyle(json_VNabrir2827ha_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VNabrir_6',
-            layerName: 'layer_VNabrir_6',
-            pane: 'pane_VNabrir_6',
-            onEachFeature: pop_VNabrir_6,
-            styles: [style_VNabrir_6_0,style_VNabrir_6_1,]
+            dataVar: 'json_VNabrir2827ha_6',
+            layerName: 'layer_VNabrir2827ha_6',
+            pane: 'pane_VNabrir2827ha_6',
+            onEachFeature: pop_VNabrir2827ha_6,
+            styles: [style_VNabrir2827ha_6_0,style_VNabrir2827ha_6_1,]
         });
-        bounds_group.addLayer(layer_VNabrir_6);
-        map.addLayer(layer_VNabrir_6);
-        function pop_RL_7(feature, layer) {
+        bounds_group.addLayer(layer_VNabrir2827ha_6);
+        map.addLayer(layer_VNabrir2827ha_6);
+        function pop_RL2004106184ha_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -411,9 +412,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_RL_7_0() {
+        function style_RL2004106184ha_7_0() {
             return {
-                pane: 'pane_RL_7',
+                pane: 'pane_RL2004106184ha_7',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -426,21 +427,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_RL_7');
-        map.getPane('pane_RL_7').style.zIndex = 407;
-        map.getPane('pane_RL_7').style['mix-blend-mode'] = 'normal';
-        var layer_RL_7 = new L.geoJson(json_RL_7, {
+        map.createPane('pane_RL2004106184ha_7');
+        map.getPane('pane_RL2004106184ha_7').style.zIndex = 407;
+        map.getPane('pane_RL2004106184ha_7').style['mix-blend-mode'] = 'normal';
+        var layer_RL2004106184ha_7 = new L.geoJson(json_RL2004106184ha_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RL_7',
-            layerName: 'layer_RL_7',
-            pane: 'pane_RL_7',
-            onEachFeature: pop_RL_7,
-            style: style_RL_7_0,
+            dataVar: 'json_RL2004106184ha_7',
+            layerName: 'layer_RL2004106184ha_7',
+            pane: 'pane_RL2004106184ha_7',
+            onEachFeature: pop_RL2004106184ha_7,
+            style: style_RL2004106184ha_7_0,
         });
-        bounds_group.addLayer(layer_RL_7);
-        map.addLayer(layer_RL_7);
-        function pop_APP_8(feature, layer) {
+        bounds_group.addLayer(layer_RL2004106184ha_7);
+        map.addLayer(layer_RL2004106184ha_7);
+        function pop_APP464ha_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -467,9 +468,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_APP_8_0() {
+        function style_APP464ha_8_0() {
             return {
-                pane: 'pane_APP_8',
+                pane: 'pane_APP464ha_8',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -482,21 +483,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_APP_8');
-        map.getPane('pane_APP_8').style.zIndex = 408;
-        map.getPane('pane_APP_8').style['mix-blend-mode'] = 'normal';
-        var layer_APP_8 = new L.geoJson(json_APP_8, {
+        map.createPane('pane_APP464ha_8');
+        map.getPane('pane_APP464ha_8').style.zIndex = 408;
+        map.getPane('pane_APP464ha_8').style['mix-blend-mode'] = 'normal';
+        var layer_APP464ha_8 = new L.geoJson(json_APP464ha_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_APP_8',
-            layerName: 'layer_APP_8',
-            pane: 'pane_APP_8',
-            onEachFeature: pop_APP_8,
-            style: style_APP_8_0,
+            dataVar: 'json_APP464ha_8',
+            layerName: 'layer_APP464ha_8',
+            pane: 'pane_APP464ha_8',
+            onEachFeature: pop_APP464ha_8,
+            style: style_APP464ha_8_0,
         });
-        bounds_group.addLayer(layer_APP_8);
-        map.addLayer(layer_APP_8);
-        function pop_LAVOURA_SOJA_9(feature, layer) {
+        bounds_group.addLayer(layer_APP464ha_8);
+        map.addLayer(layer_APP464ha_8);
+        function pop_Lavoura_soja208204ha_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -529,9 +530,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_LAVOURA_SOJA_9_0() {
+        function style_Lavoura_soja208204ha_9_0() {
             return {
-                pane: 'pane_LAVOURA_SOJA_9',
+                pane: 'pane_Lavoura_soja208204ha_9',
                 opacity: 1,
                 color: 'rgba(238,228,32,1.0)',
                 dashArray: '',
@@ -542,21 +543,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LAVOURA_SOJA_9');
-        map.getPane('pane_LAVOURA_SOJA_9').style.zIndex = 409;
-        map.getPane('pane_LAVOURA_SOJA_9').style['mix-blend-mode'] = 'normal';
-        var layer_LAVOURA_SOJA_9 = new L.geoJson(json_LAVOURA_SOJA_9, {
+        map.createPane('pane_Lavoura_soja208204ha_9');
+        map.getPane('pane_Lavoura_soja208204ha_9').style.zIndex = 409;
+        map.getPane('pane_Lavoura_soja208204ha_9').style['mix-blend-mode'] = 'normal';
+        var layer_Lavoura_soja208204ha_9 = new L.geoJson(json_Lavoura_soja208204ha_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LAVOURA_SOJA_9',
-            layerName: 'layer_LAVOURA_SOJA_9',
-            pane: 'pane_LAVOURA_SOJA_9',
-            onEachFeature: pop_LAVOURA_SOJA_9,
-            style: style_LAVOURA_SOJA_9_0,
+            dataVar: 'json_Lavoura_soja208204ha_9',
+            layerName: 'layer_Lavoura_soja208204ha_9',
+            pane: 'pane_Lavoura_soja208204ha_9',
+            onEachFeature: pop_Lavoura_soja208204ha_9,
+            style: style_Lavoura_soja208204ha_9_0,
         });
-        bounds_group.addLayer(layer_LAVOURA_SOJA_9);
-        map.addLayer(layer_LAVOURA_SOJA_9);
-        function pop_LAVOURA_CANA_10(feature, layer) {
+        bounds_group.addLayer(layer_Lavoura_soja208204ha_9);
+        map.addLayer(layer_Lavoura_soja208204ha_9);
+        function pop_Lavoura_cana205582ha_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -580,9 +581,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_LAVOURA_CANA_10_0() {
+        function style_Lavoura_cana205582ha_10_0() {
             return {
-                pane: 'pane_LAVOURA_CANA_10',
+                pane: 'pane_Lavoura_cana205582ha_10',
                 opacity: 1,
                 color: 'rgba(253,191,111,1.0)',
                 dashArray: '',
@@ -593,20 +594,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LAVOURA_CANA_10');
-        map.getPane('pane_LAVOURA_CANA_10').style.zIndex = 410;
-        map.getPane('pane_LAVOURA_CANA_10').style['mix-blend-mode'] = 'normal';
-        var layer_LAVOURA_CANA_10 = new L.geoJson(json_LAVOURA_CANA_10, {
+        map.createPane('pane_Lavoura_cana205582ha_10');
+        map.getPane('pane_Lavoura_cana205582ha_10').style.zIndex = 410;
+        map.getPane('pane_Lavoura_cana205582ha_10').style['mix-blend-mode'] = 'normal';
+        var layer_Lavoura_cana205582ha_10 = new L.geoJson(json_Lavoura_cana205582ha_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LAVOURA_CANA_10',
-            layerName: 'layer_LAVOURA_CANA_10',
-            pane: 'pane_LAVOURA_CANA_10',
-            onEachFeature: pop_LAVOURA_CANA_10,
-            style: style_LAVOURA_CANA_10_0,
+            dataVar: 'json_Lavoura_cana205582ha_10',
+            layerName: 'layer_Lavoura_cana205582ha_10',
+            pane: 'pane_Lavoura_cana205582ha_10',
+            onEachFeature: pop_Lavoura_cana205582ha_10,
+            style: style_Lavoura_cana205582ha_10_0,
         });
-        bounds_group.addLayer(layer_LAVOURA_CANA_10);
-        map.addLayer(layer_LAVOURA_CANA_10);
+        bounds_group.addLayer(layer_Lavoura_cana205582ha_10);
+        map.addLayer(layer_Lavoura_cana205582ha_10);
         function pop_Sede_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -634,71 +635,124 @@
         function style_Sede_11_0() {
             return {
                 pane: 'pane_Sede_11',
-                radius: 18.7,
+                shape: 'triangle',
+                radius: 20.0,
                 opacity: 1,
-                color: 'rgba(184,8,8,1.0)',
+                color: 'rgba(50,87,128,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0,
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(184,8,8,1.0)',
-                interactive: true,
-            }
-        }
-        function style_Sede_11_1() {
-            return {
-                pane: 'pane_Sede_11',
-                radius: 20.4,
-                opacity: 1,
-                color: 'rgba(255,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,1.0)',
+                fillColor: 'rgba(72,123,182,1.0)',
                 interactive: true,
             }
         }
         map.createPane('pane_Sede_11');
         map.getPane('pane_Sede_11').style.zIndex = 411;
         map.getPane('pane_Sede_11').style['mix-blend-mode'] = 'normal';
-        var layer_Sede_11 = new L.geoJson.multiStyle(json_Sede_11, {
+        var layer_Sede_11 = new L.geoJson(json_Sede_11, {
             attribution: '',
             interactive: true,
             dataVar: 'json_Sede_11',
             layerName: 'layer_Sede_11',
             pane: 'pane_Sede_11',
             onEachFeature: pop_Sede_11,
-            pointToLayers: [function (feature, latlng) {
+            pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
                 return L.shapeMarker(latlng, style_Sede_11_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Sede_11);
+        map.addLayer(layer_Sede_11);
+        function pop_Pista_aviao_12(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Pista_aviao_12_0() {
+            return {
+                pane: 'pane_Pista_aviao_12',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/transport_airport.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+        }
+        function style_Pista_aviao_12_1() {
+            return {
+                pane: 'pane_Pista_aviao_12',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/transport_airport.svg',
+            iconSize: [38.0, 38.0]
+        }),
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Pista_aviao_12');
+        map.getPane('pane_Pista_aviao_12').style.zIndex = 412;
+        map.getPane('pane_Pista_aviao_12').style['mix-blend-mode'] = 'normal';
+        var layer_Pista_aviao_12 = new L.geoJson.multiStyle(json_Pista_aviao_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Pista_aviao_12',
+            layerName: 'layer_Pista_aviao_12',
+            pane: 'pane_Pista_aviao_12',
+            onEachFeature: pop_Pista_aviao_12,
+            pointToLayers: [function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_Pista_aviao_12_0(feature));
             },function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Sede_11_1(feature));
+                return L.marker(latlng, style_Pista_aviao_12_1(feature));
             },
         ]});
-        bounds_group.addLayer(layer_Sede_11);
-        map.addLayer(layer_Sede_11);
+        bounds_group.addLayer(layer_Pista_aviao_12);
+        map.addLayer(layer_Pista_aviao_12);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/Sede_11.png" /> Sede': layer_Sede_11,'<img src="legend/LAVOURA_CANA_10.png" /> LAVOURA_CANA': layer_LAVOURA_CANA_10,'<img src="legend/LAVOURA_SOJA_9.png" /> LAVOURA_SOJA': layer_LAVOURA_SOJA_9,'<img src="legend/APP_8.png" /> APP': layer_APP_8,'<img src="legend/RL_7.png" /> RL': layer_RL_7,'<img src="legend/VNabrir_6.png" /> VN abrir': layer_VNabrir_6,'<img src="legend/RODOVIA_MS_316_5.png" /> RODOVIA_MS_316': layer_RODOVIA_MS_316_5,'<img src="legend/INFRAESTRUTURA_4.png" /> INFRAESTRUTURA': layer_INFRAESTRUTURA_4,'<img src="legend/AREA_EM_REGENERACAO_3.png" /> AREA_EM_REGENERACAO': layer_AREA_EM_REGENERACAO_3,'<img src="legend/Limites_San_Jorge_2.png" /> Limites_San_Jorge': layer_Limites_San_Jorge_2,"CORES_VERDADEIRAS_03_2023": layer_CORES_VERDADEIRAS_03_2023_1,"NDVI_03_2023": layer_NDVI_03_2023_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/Pista_aviao_12.png" /> Pista_aviao': layer_Pista_aviao_12,'<img src="legend/Sede_11.png" /> Sede': layer_Sede_11,'<img src="legend/Lavoura_cana205582ha_10.png" /> Lavoura_cana-2.055,82 ha': layer_Lavoura_cana205582ha_10,'<img src="legend/Lavoura_soja208204ha_9.png" /> Lavoura_soja - 2.082,04 ha': layer_Lavoura_soja208204ha_9,'<img src="legend/APP464ha_8.png" /> APP - 4,64 ha': layer_APP464ha_8,'<img src="legend/RL2004106184ha_7.png" /> RL(20,04%) - 1.061,84 ha': layer_RL2004106184ha_7,'<img src="legend/VNabrir2827ha_6.png" /> VN abrir - 28,27 ha': layer_VNabrir2827ha_6,'<img src="legend/RODOVIA_MS_316856ha_5.png" /> RODOVIA_MS_316 - 8,56 ha': layer_RODOVIA_MS_316856ha_5,'<img src="legend/Benfeitorias4476ha_4.png" /> Benfeitorias - 44,76 ha': layer_Benfeitorias4476ha_4,'<img src="legend/Regenerao649ha_3.png" /> Regeneração - 6,49 ha': layer_Regenerao649ha_3,'<img src="legend/Limites_San_Jorge_2.png" /> Limites_San_Jorge': layer_Limites_San_Jorge_2,"CORES_VERDADEIRAS_03_2023": layer_CORES_VERDADEIRAS_03_2023_1,"NDVI_03_2023": layer_NDVI_03_2023_0,}).addTo(map);
         setBounds();
         var i = 0;
-        layer_LAVOURA_SOJA_9.eachLayer(function(layer) {
+        layer_Lavoura_soja208204ha_9.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['TALHAO'] !== null?String('<div style="color: #000000; font-size: 30pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['TALHAO']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LAVOURA_SOJA_9'});
+            layer.bindTooltip((layer.feature.properties['TALHAO'] !== null?String('<div style="color: #000000; font-size: 30pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['TALHAO']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Lavoura_soja208204ha_9'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -706,12 +760,12 @@
               i++;
         });
         var i = 0;
-        layer_LAVOURA_CANA_10.eachLayer(function(layer) {
+        layer_Lavoura_cana205582ha_10.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['AREA (ha)'] !== null?String('<div style="color: #000000; font-size: 20pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['AREA (ha)']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LAVOURA_CANA_10'});
+            layer.bindTooltip((layer.feature.properties['AREA (ha)'] !== null?String('<div style="color: #000000; font-size: 20pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['AREA (ha)']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Lavoura_cana205582ha_10'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -723,15 +777,15 @@
                 return this._bounds;
             }
         });
-        resetLabels([layer_LAVOURA_SOJA_9,layer_LAVOURA_CANA_10]);
+        resetLabels([layer_Lavoura_soja208204ha_9,layer_Lavoura_cana205582ha_10]);
         map.on("zoomend", function(){
-            resetLabels([layer_LAVOURA_SOJA_9,layer_LAVOURA_CANA_10]);
+            resetLabels([layer_Lavoura_soja208204ha_9,layer_Lavoura_cana205582ha_10]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_LAVOURA_SOJA_9,layer_LAVOURA_CANA_10]);
+            resetLabels([layer_Lavoura_soja208204ha_9,layer_Lavoura_cana205582ha_10]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_LAVOURA_SOJA_9,layer_LAVOURA_CANA_10]);
+            resetLabels([layer_Lavoura_soja208204ha_9,layer_Lavoura_cana205582ha_10]);
         });
         </script>
     </body>
