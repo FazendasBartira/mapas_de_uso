@@ -134,19 +134,9 @@
   <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Mapa Unidades Bartira</h3>
     <div class="w3-container">
-        <div class="mapa">
-            <div class="map" id="map">
-                <!-- Aqui é onde o OpenLayers vai desenhar o mapa -->
-            </div>
-			<div class="info" id="info">
-				<h4 class="w3-center" id="nomeUnidade">Selecione uma
-				Unidade</h4>
-				<hr>
-				<p><b>Nome Extenso</b>: <spam id="nomeExtenso"></spam></p>
-				<p><b>Latitude</b>: <spam id="lat"></spam></p>
-				<p><b>Longitude</b>: <spam id="long"></spam></p>
-				<p><b>Fonte</b>: <spam id="fonte"></spam></p>
-			</div>
+        
+				<center><iframe title="projeto_teste_BI" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=c9754d01-d0de-49da-a7ac-94c2fdd58036&appId=48bccaba-0181-4d3b-bda1-9b9e0054fd00&autoAuth=true&ctid=6cfb9886-b7f4-4eb2-b5cb-85ce8db9adc0" frameborder="0" allowFullScreen="true"></iframe> </center>
+			
         </div>
     </div>
   </div>
@@ -155,76 +145,6 @@
 <footer class="w3-center w3-black w3-padding-16">
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
-<script type="text/javascript">
-  //Inserir aqui o código para criação do mapa na tela principal
-      // Criando a camada de mapabase OSM
-      var osm = new ol.layer.Tile({
-              source: new ol.source.OSM()
-          });
-      //Chamada para a camada de Unidades da SEMA-MT
-    var semaWMS = new ol.source.TileWMS({
-                      url: 'http://localhost:8080/geoserver/projeto_final/wms',
-                      params: {'LAYERS':'projeto_final:Unidades_SEMA_MT', 'TILED':false},
-                      serverType: 'geoserver',  
-                  });
-      var unSema = new ol.layer.Tile({
-                  source: semaWMS,
-                  visible: true,
-                  className: 'UnidadesSEMA',
-          });
-      var municipios = new ol.layer.Tile({
-                  source: new ol.source.TileWMS({
-                      url: 'http://localhost:8080/geoserver/projeto_final/wms',
-                      params: {'LAYERS':'projeto_final:Municipios_MT', 'TILED':true},
-                      serverType: 'municipiosMT',  
-                  }),
-                  visible: true,
-                  className: 'Desmatamento',
-          });
-    var visualizacao = new ol.View({
-          center: ol.proj.fromLonLat([-55.89, -13.47]),
-          zoom: 6
-        });
-      var map = new ol.Map({
-        target: 'map',
-        layers: [osm, municipios, unSema],
-        view: visualizacao
-  
-      });
-    //Chamada serviço WMS de consulta às informações de feição
-    map.on('singleclick', function (evt) {
-      // Função que retorna o painnel de informação para seu estado original
-      zeraConteudo();
-      var viewResolution = /** @type {number} */ (visualizacao.getResolution());
-      var url = semaWMS.getFeatureInfoUrl(
-        evt.coordinate,
-        viewResolution,
-        'EPSG:3857',
-        {'INFO_FORMAT': 'application/json'}
-  
-        );
-      if (url) {
-        fetch(url)
-          .then(function (response) { return response.text(); })
-          .then(function (html) {
-            var objJSON = JSON.parse(html);
-            //alert(Object.keys(objJSON.features[0].properties))
-            var propriedades = objJSON.features[0].properties;
-            document.getElementById("nomeUnidade").innerHTML = propriedades.NOME;
-            document.getElementById("nomeExtenso").innerHTML = propriedades.NOME_EXTEN;
-            document.getElementById("lat").innerHTML = propriedades.LAT;
-            document.getElementById("long").innerHTML = propriedades.LONG;
-            document.getElementById("fonte").innerHTML = propriedades.FONTE;
-          });
-        }
-    });
-    function zeraConteudo(){
-      document.getElementById("nomeUnidade").innerHTML = "Selecione uma Unidade";
-      document.getElementById("nomeExtenso").innerHTML = "";
-      document.getElementById("lat").innerHTML = "";
-      document.getElementById("long").innerHTML = "";
-      document.getElementById("fonte").innerHTML = "";
-    }
-    </script>
+
   </body>
   </html>
